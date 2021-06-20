@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<p><a href="{{ product.get_list_url }}">&lt;- Back</a></p>
+<ul class="list-group">
+  <li class="list-group-item">ID: {{ product.id }}</li>
+  <li class="list-group-item">Title: {{ product.title }}</li>
+  {% if product.description %}
+  <li class="list-group-item">Description: {{ product.description }}</li>
+  {% endif %}
+  <li class="list-group-item">Price: {{ product.price }}$</li>
+  <li class="list-group-item">Summary: {{ product.summary }}</li>
+  {% if product.feature %}
+  <li class="list-group-item">Has feature</li>
+  {% else %}
+  <li class="list-group-item">Does not have feature</li>
+  {% endif %}
+</ul>
+
+{% endblock %}
